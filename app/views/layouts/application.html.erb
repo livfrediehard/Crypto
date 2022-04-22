@@ -12,15 +12,11 @@
 
   <body>
 
-<!-- HTML Link Bar
-  <a href="/">Home</a> | <a href="/home/about">About Us</a>
-  -->
+  <%= render 'home/navbar' %>
 
-  <!--Embedded Ruby Link Bar-->
-  <br>
-<%= link_to "Home", root_path %>
-<%= link_to "About Us", home_about_path %>
-
-    <%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
+  
   </body>
 </html>
