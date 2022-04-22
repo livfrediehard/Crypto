@@ -1,16 +1,25 @@
-<h1>Hello World</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>BTC Tracker</h1>
+<p>Updated: 
+<% for x in @coins['data'] %>
+    <% for coin in @my_coins %>
+        <% if coin == x['symbol'] %>
+            <%= x['last_updated'] %>
+        <% end %>
+    <% end %>
+<% end %>
+</p>
 
 <br/><br/>
 
 <%@coins%>
-
+<h3>
 <% for x in @coins['data'] %>
     <% for coin in @my_coins %>
         <% if coin == x['symbol'] %>
-            <%= x['name'] %>
+            <%= x['name'] %>: $<%= number_with_precision((x['quote']['USD']['price']),precision: 2)%>
         <% end %>
     <% end %>
 <% end %>
+</h3>
 
 
